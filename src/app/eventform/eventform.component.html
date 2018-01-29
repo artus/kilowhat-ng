@@ -1,0 +1,19 @@
+<div id="kw-eventform-container" class="kw-content-container">
+    
+    <h2>Add a new Event</h2>
+    <p>An event can be used to keep track of certain events in the lifetime of your meter, such as a power outtage or the purchase of a new electric device that you expect to consume more energy.</p>
+    
+    <form>
+        
+        <label for="kw-eventform-description">Description</label>
+        <input name="description" id="kw-meterform-description" type="text" [(ngModel)]="newMeterEvent.description">
+        
+        <button type="submit" class="kw-button-add kw-margin-top-bottom" (click)="addMeterEvent()">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Add event
+        </button>
+        
+        
+    </form>
+    
+</div>

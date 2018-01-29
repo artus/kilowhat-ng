@@ -5,9 +5,9 @@
     <form>
         
         <label for="kw-readingform-value">Value</label>
-        <input name="value" id="kw-readingform-value" type="text">
+        <input name="value" id="kw-readingform-value" type="text" [(ngModel)]="newReading.value">
         
-        <button type="submit" class="kw-button-add kw-margin-top-bottom">
+        <button type="submit" class="kw-button-add kw-margin-top-bottom" (click)="addReading()">
             <i class="fa fa-plus" aria-hidden="true"></i>
             Add reading
         </button>

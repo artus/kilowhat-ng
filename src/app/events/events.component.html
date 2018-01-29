@@ -1,3 +1,35 @@
-<p>
-  events works!
-</p>
+<div id="kw-events-container" class="kw-content-container">
+    
+    <h2>Meter events</h2>
+    
+    <div class="kw-meter-container kw-event-container" *ngFor="let meter of kilowhat().repo.getMeters().values()">
+    
+        <div class="kw-meter-top">
+            <h3>Meter {{meter.number}}</h3>
+            <a class="kw-button-add" routerLink="/eventform/{{meter.id}}"><i class="fa fa-plus" aria-hidden="true"></i> Add event</a>
+        </div>
+        
+        <table class="kw-event-center">
+        
+            <thead>
+                <tr class="kw-event-header">
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            
+            <tbody class="kw-event-body">
+                <tr *ngFor="let event of meter.sortedMeterEvents">
+                    <td>{{event.date.toDateString()}}</td>
+                    <td>{{event.description}}</td>
+                    <td><a (click)="removeEvent(meter.id, event.id)" class="kw-button-delete"><i class="fa fa-trash-o" aria-hidden="true"></i> Remove</a></td>
+                </tr>
+            </tbody>
+            
+            
+        </table>
+    
+    </div>
+    
+</div>

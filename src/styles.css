@@ -38,6 +38,8 @@ body
     
     --kw-color-3-alternative: #8ADB7A;
     
+    --kw-color-event: #dcffb7;
+    
     --kw-nav-text: #2B4426;
     
     --kw-logo-size: 75px;
@@ -190,6 +192,11 @@ body
     background-color: var(--kw-color-background);
 }
 
+#kw-nav-container ul .kw-active:hover
+{
+    background-color: white;
+}
+
 /*
  content
 */ 
@@ -261,6 +268,11 @@ body
     margin-bottom: 0;
 }
 
+.kw-meter-dial-container a
+{
+    float: right;
+}
+
 .kw-meter-dial-container
 {
     float: left;
@@ -268,6 +280,11 @@ body
     
     font-size: 16px;
     line-height: 16px;
+}
+
+.kw-meter-dial-reading, .kw-meter-dial-icon
+{
+    box-sizing: border-box;
 }
 
 .kw-meter-dial-reading
@@ -287,7 +304,8 @@ body
     padding: var(--kw-padding-button);
     
     min-width: 20px;
-    text-align: right;
+    text-align: center;
+    font-size: 16px;
 }
 
 /*
@@ -349,4 +367,57 @@ form input
 .kw-form-radio-content
 {
     float: none;
+}
+
+/*
+ Events
+*/
+
+.kw-event-container:first-of-type
+{
+    margin-top: var(--kw-padding);
+}
+
+.kw-event-center
+{
+    width: 100%;
+    
+    border-collapse: collapse;
+    
+    margin-top: var(--kw-padding);
+    
+    overflow-x:auto;
+}
+
+.kw-event-header, .kw-event-body
+{
+    width: calc(100% - 2 * var(--kw-padding-button));
+    
+    text-align: left;
+}
+
+.kw-event-header
+{
+    background-color: var(--kw-color-3);
+}
+
+.kw-event-header th, .kw-event-body tr td
+{
+    padding: var(--kw-padding-button);
+}
+
+.kw-event-body tr:nth-child(even) td
+{
+    background-color: var(--kw-color-background);
+}
+
+.kw-event-body tr:hover td
+{
+    background-color: var(--kw-color-event);
+}
+
+.kw-event-body tr td
+{
+    transition: 0.5s;
+    border-bottom: 1px solid var(--kw-color-5);
 }

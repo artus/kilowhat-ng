@@ -14,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { EventsComponent } from './events/events.component';
 import { MeterformComponent } from './meterform/meterform.component';
 import { ReadingformComponent } from './readingform/readingform.component';
+import { EventformComponent } from './eventform/eventform.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ReadingformComponent } from './readingform/readingform.component';
     AboutComponent,
     EventsComponent,
     MeterformComponent,
-    ReadingformComponent
+    ReadingformComponent,
+    EventformComponent
   ],
   imports: [
     BrowserModule,

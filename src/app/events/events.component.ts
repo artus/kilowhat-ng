@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { KilowhatService } from '../kilowhat.service';
+
+import { KiloWhat, Meter, MeterEvent } from 'kilowhat';
 
 @Component({
   selector: 'app-events',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private kilowhatService : KilowhatService) { }
 
   ngOnInit() {
+  }
+    
+  kilowhat() : KiloWhat
+  {
+      return this.kilowhatService.kilowhat;
+  }
+    
+  removeEvent(meterId : number, eventId : number)
+  {
+      this.kilowhat().repo.removeMeterEvent(meterId, eventId);
   }
 
 }

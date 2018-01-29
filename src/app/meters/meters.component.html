@@ -2,14 +2,33 @@
     
     <h2>Meters</h2> 
     
-    <a id="kw-meters-addmeter-button" class="kw-button-add" routerLink="/meterform">
+    <a id="kw-meters-addmeter-button" class="kw-button-add kw-margin-top-bottom" routerLink="/meterform">
         <i class="fa fa-plus" aria-hidden="true"></i>
         Add new meter
     </a>
     
-    <div class="kw-meter-container" *ngFor="let meters of kilowhat().repo.getMeters().values()">
+    <div class="kw-meter-container" *ngFor="let meter of kilowhat().repo.getMeters().values()">
         
+        <div class="kw-meter-top">
+            <h3>Meter {{meter.number}}</h3>
+            <a (click)="deleteMeter(meter.id)" class="kw-button-delete"><i class="fa fa-trash-o" aria-hidden="true"></i> remove</a>
+        </div>
+        <p>{{meter.description}}</p>
         
+        <div class="kw-meter-center">
+            
+            <div class="kw-meter-center-left">
+                <div class="kw-meter-dial-container" *ngFor="let dial of meter.dials.values()">
+                    <span class="kw-meter-dial-icon" *ngIf="dial.description == 'night'"><i class="fa fa-moon-o" aria-hidden="true"></i></span>
+                    <span class="kw-meter-dial-icon" *ngIf="dial.description == 'day'"><i class="fa fa-sun-o" aria-hidden="true"></i></span>
+                    <span class="kw-meter-dial-reading">{{dial.value}}</span>
+                    <a class="kw-meter-dial-button kw-button-add"><i class="fa fa-plus" aria-hidden="true"></i> Add reading</a>
+                </div>
+                
+            </div>
+            
+            
+        </div>
     
     </div>
     

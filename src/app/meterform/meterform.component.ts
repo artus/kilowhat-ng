@@ -25,11 +25,14 @@ export class MeterformComponent implements OnInit {
   {
       let tempMeter;
       
-      if (this.dials === "1")
+      if (this.dials === "2")
       {
-          tempMeter = this.kilowhatService.kilowhat.addNewSingleMeter();
+          tempMeter = this.kilowhatService.kilowhat.addNewDualMeter();
+          Array.from(tempMeter.dials.values())[1].description = "night";
       }
+      else tempMeter = this.kilowhatService.kilowhat.addNewSingleMeter();
       
+      Array.from(tempMeter.dials.values())[0].description = "day";
       tempMeter.description = this.newMeter.description;
       tempMeter.number = this.newMeter.number;
       

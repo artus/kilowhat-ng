@@ -20,5 +20,10 @@ export class MetersComponent implements OnInit {
   {
       return this.kilowhatService.kilowhat;
   }
+    
+  deleteMeter(meterId : number)
+  {
+      this.kilowhat().repo.removeMeter(meterId);
+  }
 
 }

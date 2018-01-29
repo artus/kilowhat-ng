@@ -16,6 +16,8 @@ body
     height: 100%;
     
     float: left;
+    
+    min-width: calc( var(--kw-logo-size) + var(--kw-min-width));
 }
 
 :root 
@@ -29,6 +31,11 @@ body
     --kw-color-form: white;
     --kw-color-background: #eaeaea;
     
+    --kw-color-delete: #db3232;
+    --kw-color-delete-alternative: #ed4444;
+    
+    --kw-color-dial: #333333;
+    
     --kw-color-3-alternative: #8ADB7A;
     
     --kw-nav-text: #2B4426;
@@ -38,18 +45,20 @@ body
     --kw-padding: 20px;
     --kw-padding-button: 10px;
     --kw-padding-label: 10px;
+    
+    --kw-min-width: 400px;
 }
 
 .container
 {
     display: inline-block;
     float: left;
+    
 }
 
-.kw-button-add
+.kw-button-add, .kw-button-delete
 {
     border: none;
-    background-color: var(--kw-color-3);
     border-radius: 10px;
     padding: var(--kw-padding-button);
     
@@ -57,17 +66,35 @@ body
     color: white;
     float: left;
     
-    margin-top: var(--kw-padding);
-    margin-bottom: var(--kw-padding);
-    
     cursor: pointer;
     
     font-size: 16px;
 }
 
+.kw-button-add
+{
+    background-color: var(--kw-color-3);
+}
+
 .kw-button-add:hover
 {
     background-color: var(--kw-color-3-alternative);
+}
+
+.kw-button-delete
+{
+    background-color: var(--kw-color-delete);
+}
+
+.kw-button-delete:hover
+{
+    background-color: var(--kw-color-delete);
+}
+
+.kw-margin-top-bottom
+{
+    margin-top: var(--kw-padding);
+    margin-bottom: var(--kw-padding);
 }
 
 #kw-container
@@ -101,9 +128,9 @@ body
     width: calc( 100% - var(--kw-logo-size));
     height: var(--kw-logo-size);
     
-    background-color: var(--kw-color-2);
-    
     line-height: var(--kw-logo-size);
+    
+    background-color: var(--kw-color-2);
 }
 
 #kw-header-container h1
@@ -181,11 +208,86 @@ body
     box-sizing: border-box;
     
     overflow: auto;
+    
+    min-width: var(--kw-min-width);
 }
 
 .kw-meter-container
 {
+    float: left;
     border: 1px solid lightgray;
+    
+    width: calc( 100% - 2 * var(--kw-padding));
+    
+    padding: var(--kw-padding);
+    margin-bottom: var(--kw-padding);
+    
+    background-color: var(--kw-color-form);
+}
+
+.kw-meter-top
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.kw-meter-center
+{
+    margin-top: var(--kw-padding);
+    float: left;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.kw-meter-center-left
+{
+    float: left;
+    
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: var(--kw-padding);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.kw-meter-dial-container:last-child
+{
+    margin-bottom: 0;
+}
+
+.kw-meter-dial-container
+{
+    float: left;
+    margin-bottom: var(--kw-padding);
+    
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.kw-meter-dial-reading
+{
+    float: left;
+    background-color: var(--kw-color-dial);
+    padding: var(--kw-padding-button);
+    margin-right: var(--kw-padding);
+    
+    color: white;
+}
+
+.kw-meter-dial-icon
+{
+    float: left;
+    vertical-align: baseline;
+    padding: var(--kw-padding-button);
+    
+    min-width: 20px;
+    text-align: right;
 }
 
 /*

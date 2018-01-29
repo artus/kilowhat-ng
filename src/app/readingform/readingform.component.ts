@@ -32,6 +32,8 @@ export class ReadingformComponent implements OnInit {
   addReading()
   {
       this.kilowhatService.kilowhat.repo.addReading(this.meterId, this.dialId, this.newReading);
+      this.kilowhatService.save();
+      
       this.router.navigate(["/meters"]);
   }
 }

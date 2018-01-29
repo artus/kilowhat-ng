@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { KiloWhat, MeterEvent } from 'kilowhat';
 
+import { KilowhatStorage } from '../assets/persistence/persistence';
+
 @Injectable()
 export class KilowhatService {
     
   kilowhat : KiloWhat;
+  storage : KilowhatStorage;
 
   constructor() { 
-      this.kilowhat = new KiloWhat();
-      
-      let newMeter = this.kilowhat.addNewSingleMeter();
-      let secondMeter = this.kilowhat.addNewDualMeter();
-      
-      this.kilowhat.repo.addMeterEvent(newMeter.id, new MeterEvent());
-      this.kilowhat.repo.addMeterEvent(newMeter.id, new MeterEvent());
-      this.kilowhat.repo.addMeterEvent(secondMeter.id, new MeterEvent());
+      this.storage = new KilowhatStorage();
+      this.kilowhat = this.storage.load();
+  }
+    
+  save()
+  {
+      this.storage.save(this.kilowhat);
   }
 
 }

@@ -37,6 +37,8 @@ export class MeterformComponent implements OnInit {
       tempMeter.description = this.newMeter.description;
       tempMeter.number = this.newMeter.number;
       
+      this.kilowhatService.save();
+      
       this.router.navigate(["/meters"]);
   }
 

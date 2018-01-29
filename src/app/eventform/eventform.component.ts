@@ -29,6 +29,8 @@ export class EventformComponent implements OnInit {
   addMeterEvent()
   {
       this.kilowhatService.kilowhat.repo.addMeterEvent(this.meterId, this.newMeterEvent);
+      this.kilowhatService.save();
+      
       this.router.navigate(["/events"]);
   }
 

@@ -23,6 +23,7 @@ export class EventsComponent implements OnInit {
   removeEvent(meterId : number, eventId : number)
   {
       this.kilowhat().repo.removeMeterEvent(meterId, eventId);
+      this.kilowhatService.save();
   }
 
 }

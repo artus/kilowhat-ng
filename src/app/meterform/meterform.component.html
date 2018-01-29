@@ -1,0 +1,29 @@
+<div id="kw-meterform-container" class="kw-content-container">
+    
+    <h2>Add a new meter</h2>
+    
+    <form>
+        
+        
+        <label for="kw-meterform-description">Description</label>
+        <input [(ngModel)]="newMeter.description" name="description" id="kw-meterform-description" type="text" required>
+        
+        <label for="kw-meterform-number">Meternumber</label>
+        <input [(ngModel)]="newMeter.number" name="number" id="kw-meterform-number" type="text" required>
+        
+        <div class="kw-form-control-container">
+            <label for="kw-meterform-dials">Metertype</label>
+            <input [(ngModel)]="dials" type="radio" class="kw-form-radio" name="dials" value="1" checked="checked"><span class="kw-form-radio-content"> Single meter</span><br>
+            <input [(ngModel)]="dials" type="radio" class="kw-form-radio" name="dials" value="2"><span class="kw-form-radio-content"> Dual meter</span>
+        </div>
+    
+        <button (click)="addMeter()" type="submit" class="kw-button-add">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Add meter
+        </button>
+        
+    </form>
+    
+    
+    
+</div>

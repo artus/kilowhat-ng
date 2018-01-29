@@ -1,1 +1,250 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+body 
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    float: left;
+}
+
+:root 
+{
+    --kw-color-1: #0d324d;
+    --kw-color-2: #2d4a63;
+    --kw-color-3: #82ba77;
+    --kw-color-4: #e5bb00;
+    --kw-color-5: #9da2ab;
+    
+    --kw-color-form: white;
+    --kw-color-background: #eaeaea;
+    
+    --kw-color-3-alternative: #8ADB7A;
+    
+    --kw-nav-text: #2B4426;
+    
+    --kw-logo-size: 75px;
+    
+    --kw-padding: 20px;
+    --kw-padding-button: 10px;
+    --kw-padding-label: 10px;
+}
+
+.container
+{
+    display: inline-block;
+    float: left;
+}
+
+.kw-button-add
+{
+    border: none;
+    background-color: var(--kw-color-3);
+    border-radius: 10px;
+    padding: var(--kw-padding-button);
+    
+    text-decoration: none;
+    color: white;
+    float: left;
+    
+    margin-top: var(--kw-padding);
+    margin-bottom: var(--kw-padding);
+    
+    cursor: pointer;
+    
+    font-size: 16px;
+}
+
+.kw-button-add:hover
+{
+    background-color: var(--kw-color-3-alternative);
+}
+
+#kw-container
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    background-color: var(--kw-color-5);
+}
+
+#kw-logo-container
+{
+    width: var(--kw-logo-size);
+    height: var(--kw-logo-size);
+    
+    background-color: var(--kw-color-1);
+    background-image: url('assets/img/logo-250.png');
+    
+    background-size: calc(var(--kw-logo-size) - 40%);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*
+ KiloWhat Header
+*/
+
+#kw-header-container
+{
+    width: calc( 100% - var(--kw-logo-size));
+    height: var(--kw-logo-size);
+    
+    background-color: var(--kw-color-2);
+    
+    line-height: var(--kw-logo-size);
+}
+
+#kw-header-container h1
+{
+    margin-left: var(--kw-padding);
+    color: white;
+}
+
+/*
+ KiloWhat Nav
+*/
+
+#kw-nav-container
+{
+    width: var(--kw-logo-size);
+    height: calc( 100% - var(--kw-logo-size));
+    
+    background-color: var(--kw-color-3);
+}
+
+#kw-nav-container ul
+{
+    display: flex;
+    flex-direction: column;
+    
+    text-decoration: none;
+    list-style: none;
+    
+    width: 100%;
+    height: var(--kw-logo-size);
+}
+
+#kw-nav-container ul li
+{
+    width: var(--kw-logo-size);
+    height: var(--kw-logo-size);
+    
+    text-align: center;
+    line-height: var(--kw-logo-size);
+    
+    cursor: pointer;
+    
+    color: var(--kw-nav-text);
+    
+    font-size: calc( var(--kw-logo-size) - 50px);
+    
+    transition: 0.5s;
+}
+
+#kw-nav-container ul li:hover
+{
+    background-color:  var(--kw-color-3-alternative);
+}
+
+#kw-nav-container ul .active
+{
+    background-color: white;
+}
+
+/*
+ content
+*/ 
+
+.kw-content-container
+{
+    float: left;
+    
+    width: calc( 100% - var(--kw-logo-size));
+    height: calc( 100% - var(--kw-logo-size));
+    
+    background-color: var(--kw-color-background);
+    
+    padding: var(--kw-padding);
+    
+    box-sizing: border-box;
+    
+    overflow: auto;
+}
+
+.kw-meter-container
+{
+    border: 1px solid lightgray;
+}
+
+/*
+ form
+*/
+
+form 
+{
+    margin-top: var(--kw-padding);
+    margin-bottom: var(--kw-padding);
+    
+    padding: var(--kw-padding);
+    border: 1px solid lightgray;
+    
+    width: calc( 100% - 2 * var(--kw-padding));
+    
+    float: left;
+    
+    background-color: var(--kw-color-form);
+}
+
+form label, form input
+{
+    float: left;
+    width: calc(100% - var(--kw-padding));
+}
+
+form label
+{
+    margin-bottom: var(--kw-padding-label);
+}
+
+form input
+{
+    margin-bottom: var(--kw-padding);
+    
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.kw-form-control-container
+{
+    width: 100%;
+    text-align: left;
+}
+
+.kw-form-control-container label
+{
+    width: 100%;
+}
+
+.kw-form-radio
+{
+    float: none;
+    width: auto;
+}
+
+.kw-form-radio-content
+{
+    float: none;
+}

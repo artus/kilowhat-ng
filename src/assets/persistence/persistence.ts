@@ -43,6 +43,8 @@ export class KilowhatStorage
     {
         let kiloWhat = new KiloWhat();
         
+        if (localStorage.getItem('kilowhat') === null) return new KiloWhat();
+        
         let kiloWhatDO = JSON.parse(localStorage.getItem('kilowhat'));
         
         for (let meterDO of kiloWhatDO)

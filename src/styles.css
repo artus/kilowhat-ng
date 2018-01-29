@@ -185,9 +185,9 @@ body
     background-color:  var(--kw-color-3-alternative);
 }
 
-#kw-nav-container ul .active
+#kw-nav-container ul .kw-active
 {
-    background-color: white;
+    background-color: var(--kw-color-background);
 }
 
 /*

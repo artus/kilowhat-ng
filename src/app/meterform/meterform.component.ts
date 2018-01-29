@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { KilowhatService } from '../kilowhat.service';
 
 import { Meter } from 'kilowhat';
+import { Dial } from 'kilowhat';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class MeterformComponent implements OnInit {
     
   addMeter()
   {
-      let tempMeter;
+      let tempMeter = new Meter();
       
       if (this.dials === "2")
       {
